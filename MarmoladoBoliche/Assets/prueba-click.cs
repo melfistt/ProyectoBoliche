@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class hola : MonoBehaviour
 {
-    public GameObject escondermesh;
-
+    public inventario inventario;
+    public string nombreitem;
+    public int itemID;
     void OnMouseDown()
     {
-        escondermesh.SetActive(false); // Hides the mesh when collider is clicked
+        // agregar un item al inventario
+        inventario.AddItem(gameObject);
+
+        // ocultar el objeto
+        gameObject.SetActive(false);
+
+        Debug.Log(nombreitem+"guardado en el inventario");
+
     }
 }
